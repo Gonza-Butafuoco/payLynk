@@ -54,7 +54,6 @@ export class CurrencyService {
 
       const rate = response.data.rates[to];
 
-      // Cachear por 1 hora (3600 segundos)
       await this.cacheManager.set(cacheKey, rate, 3600);
 
       return rate;
