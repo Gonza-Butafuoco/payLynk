@@ -22,14 +22,14 @@ export function LandingHeader() {
             className="w-full font-bold rounded-full px-4 py-3 border-2 bg-slate-400 hover:bg-slate-600 transition-colors"
             asChild
           >
-            <Link href="/login">Iniciar Sesion</Link>
+            <Link href="/">Iniciar Sesion</Link>
           </Button>
           <Button
             size="lg"
             className="w-full rounded-full font-bold px-4 py-3 bg-blue-600 hover:bg-blue-700 transition-colors"
             asChild
           >
-            <Link href="/login">Registrarse</Link>
+            <Link href="/register">Registrarse</Link>
           </Button>
         </div>
       </nav>
