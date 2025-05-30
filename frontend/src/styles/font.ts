@@ -1,12 +1,20 @@
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk  , Roboto } from "next/font/google";
 
-export const fontSans = Inter({
+export const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-inter",
 });
 
-export const fontHeading = Space_Grotesk({
+export const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-heading",
+  variable: '--font-space-grotesk',
   weight: ["400", "700"],
 });
+
+
+export const roboto = Roboto({
+  subsets: ["latin"],
+  variable: '--font-roboto',
+  weight: ["400", "500", "700"],
+});
+

@@ -4,34 +4,50 @@ import Image from "next/image";
 
 export function LandingHeader() {
   return (
-    <header className="border-b  bg-[#E5F6FF] backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container flex h-16  items-center justify-between max-w-[87vw] mx-auto">
-        <div className="flex items-center gap-2">
-          <Image
-            src="/assets/icons/payLynk-logo.png"
-            alt="payLynk Logo"
-            width={100}
-            height={100}
-          />
-          <span className="text-xl font-semibold text-black">PayLynk.</span>
-        </div>
+    <header
+      className="border-b  backdrop-blur supports-[backdrop-filter]:bg-background/60"
+    >
+      <nav className="container bg-gray-950 flex h-16 items-center justify-between px-4 sm:px-8 max-w-full pr-4 " >
+      {/* Logo Section */}
+      <Link href="/" className="flex items-center lg:gap-2">
+        <Image
+        src="/assets/icons/payLynk-logo.png"
+        alt="PayLynk Logo"
+        width={60}
+        height={60}
+        className="object-contain"
+        />
+        <span
+        className="text-xl lg:text-2xl font-medium  text-white"
+        style={{ fontFamily: "Roboto, sans-serif" }}
+        >
+        PayLynk
+        </span>
+      </Link>
 
-        <div className="flex items-center gap-4 content-start  text-white ">
-          <Button
-            size="lg"
-            className="w-full font-bold rounded-full px-4 py-3 border-2 bg-slate-400 hover:bg-slate-600 transition-colors"
-            asChild
-          >
-            <Link href="/">Iniciar Sesion</Link>
-          </Button>
-          <Button
-            size="lg"
-            className="w-full rounded-full font-bold px-4 py-3 bg-blue-600 hover:bg-blue-700 transition-colors"
-            asChild
-          >
-            <Link href="/register">Registrarse</Link>
-          </Button>
-        </div>
+      <div>
+
+      </div>
+
+      {/* Navigation Buttons */}
+      <div className=" flex items-center justify-end w-full gap-4 lg:gap-8 !pr-4">
+        <Button
+        size="lg"
+        className="rounded-xs text-xs text-center lg:text-lg  w-24 lg:w-36 bg-white hover:bg-slate-400 transition-colors font-semibold px-6 py-3"
+        asChild
+        style={{ fontFamily: "Roboto, sans-serif" }}
+        >
+        <Link href="/login">Iniciar Sesión</Link>
+        </Button>
+        <Button
+        size="lg"
+        className="rounded-xs !text-[#FECA72] w-24 text-xs lg:text-lg lg:w-36 bg-gray-950 hover:bg-purple-900 hover:!text-white transition-colors px-8 font-semibold py-4 "
+        asChild
+        style={{ fontFamily: "Roboto, sans-serif" }}
+        >
+        <Link href="/register">Registrarse</Link>
+        </Button>
+      </div>
       </nav>
     </header>
   );

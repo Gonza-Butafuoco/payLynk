@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
+
 module.exports = {
   darkMode: "class",
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",  
-    "./components/**/*.{ts,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}", // Incluye todos los archivos en src
+    "./src/components/**/*.{ts,tsx}", // Asegúrate de incluir src/components
+    "./src/pages/**/*.{js,ts,jsx,tsx}", // Incluye src/pages
   ],
   theme: {
     container: {
@@ -14,7 +18,7 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          DEFAULT: "#2563eb",      
+          DEFAULT: "#2563eb",
           light: "#3b82f6",
           dark: "#1d4ed8",
         },
@@ -25,7 +29,9 @@ module.exports = {
         sm: "4px",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Space Grotesk', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
     },
   },

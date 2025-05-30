@@ -1,25 +1,35 @@
+// frontend/src/lib/api/auth.ts
 import axios from 'axios';
 
-export const authService = {
-  login: async (email: string, password: string) => {
-    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
-      email,
-      password
-    });
-    return response.data;
-  },
-
-  register: async (userData: { email: string; password: string }) => {
-    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signup`, userData);
-    return response.data;
-  },
-
-  getProfile: async () => {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/auth/profile`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      }
-    });
-    return response.data;
-  }
+const login = async (credentials: { email: string; password: string }) => {
+  const response = await axios.post('/api/auth/login', credentials);
+  return response.data; // { token: string, user: User }
 };
+
+const getProfile = async () => {
+  const token = localStorage.getItem('token');
+  const response = await axios.get('/api/auth/profile', {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+  return response.data; 
+};
+
+
+export const register = async (userData: { email: string; password: string }) => {
+  const response = await axios.post('/api/auth/register', userData);
+  return response.data;
+};
+
+
+export const authService = {
+  login,
+  getProfile,
+  register
+};
+
+
+
+
+
